@@ -1,10 +1,13 @@
 const util = require("util");
-function buscarEstudiante(nombre,arregloest){
+function buscarEstudiante(nombre,array){
 
-    for(const i=0; i<estudiantes.length; i++){
-       return estudiantes.filter(estudiante => estudiante.nombre===nombre);
-        
+    for(let i=0; i<array.length; i++){
+       if (array[i].nombre===nombre){
+        return array[i];
+       }
+             
     }
+    return null;
 }
 
 const estudiantes = [
@@ -12,12 +15,9 @@ const estudiantes = [
     { nombre: 'María', edad: 18 },
     { nombre: 'Pedro', edad: 22 }
   ];
-
-
+   
 const inspected = util.inspect(buscarEstudiante('Pedro', estudiantes));
 console.log(inspected);
-/*const inspected = util.inspect());
-console.log(inspected);*/
 // { nombre: 'Pedro', edad: 22 }
 const inspected1 = util.inspect(buscarEstudiante('Carlos', estudiantes));
 console.log(inspected1);
